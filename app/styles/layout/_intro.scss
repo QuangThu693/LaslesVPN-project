@@ -1,0 +1,64 @@
+.intro {
+  margin-bottom: 5rem;
+  margin-bottom: 9.6rem;
+  &-container {
+    box-shadow: 2px 2px 40px 0 rgba($dark-color, 0.1);
+  }
+  &-list {
+    padding: 3.7rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 3.65rem;
+    // &:nth-child(2) {
+    //   border-left: 1px solid $dark-color;
+    //   border-right: 1px solid $dark-color;
+    // }
+  }
+  &-icon {
+    @include size(5.5rem);
+    background-color: rgba($secondary-color, 0.3);
+    position: relative;
+    border-radius: 50%;
+    .icon-tab {
+      position: absolute;
+      color: $secondary-color;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: calc(30 / 25);
+    margin-bottom: 0.5rem;
+  }
+  &-text {
+    font-size: 2rem;
+    line-height: calc(30 / 20);
+  }
+
+  @include minWidth(768px) {
+    &-item:nth-child(2) {
+      border-left: 1px solid $dark-color;
+      border-right: 1px solid $dark-color;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      grid-template-columns: 100%;
+      gap: 3rem 0;
+    }
+    &-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem 0;
+    }
+  }
+}

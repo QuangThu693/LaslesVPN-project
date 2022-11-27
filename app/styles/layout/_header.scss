@@ -1,0 +1,55 @@
+.header {
+  &-container {
+    padding-top: 4.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-logo {
+    @include size(15rem, 3.6rem);
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &-link {
+    color: $dark-color;
+  }
+  &-auth {
+    display: flex;
+    align-items: center;
+    gap: 0 3rem;
+  }
+  &-signIn {
+    font-weight: 500;
+    color: $black-text;
+    cursor: pointer;
+  }
+  &-signUp {
+    padding: 1.3rem 4.5rem;
+    border-radius: 5rem;
+    border: 1px solid;
+    font-weight: 500;
+  }
+
+  @include maxWidth(1023px) {
+    &-container {
+      padding-top: 3.5rem;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-container {
+      padding-top: 2.5rem;
+    }
+    &-auth {
+      gap: 0 2rem;
+    }
+    &-logo {
+      @include size(13rem, 3rem);
+    }
+    &-signUp {
+      padding: 1rem 2rem;
+    }
+  }
+}

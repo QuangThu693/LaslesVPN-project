@@ -1,0 +1,61 @@
+.feature {
+  margin-bottom: 12.7rem;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 17rem;
+  }
+  &-image {
+    margin-left: 3.4rem;
+    img {
+      object-fit: cover;
+    }
+  }
+  &-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: calc(50 / 35);
+    color: $black-text;
+    max-width: 38.5rem;
+  }
+  &-desc {
+    line-height: calc(30 / 16);
+    margin-top: 2rem;
+    margin-bottom: 2.3rem;
+    max-width: 55.5rem;
+  }
+  &-item {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  &-icon {
+    color: $thrid-color;
+    font-size: 2.4rem;
+  }
+  &-text {
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    line-height: calc(30 / 14);
+  }
+
+  @include maxWidth(1023px) {
+    &-container {
+      gap: 0 4rem;
+    }
+    & {
+      margin-bottom: 5rem;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-container {
+      flex-direction: column;
+      gap: 5rem 0;
+    }
+    &-title {
+      font-size: 2.5rem;
+    }
+  }
+}

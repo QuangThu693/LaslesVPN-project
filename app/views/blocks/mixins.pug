@@ -1,0 +1,67 @@
+mixin menuHeaderItem(name)
+	li.menu-item 
+		a.menu-link= name  
+
+mixin introItem(classIcon,title, textName)
+	li.intro-item 
+		.intro-icon
+			i(class= classIcon).icon-tab
+		.intro-infor 
+			h3.intro-title= title
+			span.intro-text= textName
+
+mixin blockFeatutre(title, desc)
+	.feature-block
+		h2.feature-title= title 
+		p.feature-desc= desc
+
+mixin featureItem(text)
+	li.feature-item 
+		i.fa.fa-check-circle.feature-icon
+		span.feature-text= text
+
+mixin blockPlan(heading, desc)
+	.plan-top 
+		h3.plan-heading= heading
+		p.plan-desc= desc
+
+mixin planInfoItem(text) 
+	.plan-info
+		i.fa.fa-check.plan-icon
+		p.plan-text= text
+
+mixin planItem(src, title, price,classButton, active="")
+	.plan-item(class= active) 
+		.plan-image 	
+			img(src= src)
+		h4.plan-title= title
+		.plan-details
+			if block 
+				block
+		h3.plan-price= price 
+		a.plan-button.button(class= classButton) Select
+
+
+mixin footerItem(name= "Download") 
+	li.footer-item 
+		a.footer-link= name
+
+mixin footerMenu(title="Product")
+	.footer-menu
+		ul.footer.list
+			h4.footer-title=title
+			if block 	
+				block
+
+mixin customerItem(src, name,location,number,desc )
+	.customer-item
+		.customer-top 
+			img(src=src, alt="").customer-avatar 
+			.customer-info  
+				h4.customer-name=name
+				span.customer-location= location
+			.customer-vote 
+				span.customer-number= number
+				i.fa.fa-star.customer-icon
+		.customer-desc 
+			p= desc

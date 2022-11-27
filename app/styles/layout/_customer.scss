@@ -1,0 +1,117 @@
+.customer {
+  &-container {
+    padding-top: 6.6rem;
+    margin-bottom: 5rem;
+  }
+  &-list {
+    margin-top: 6rem;
+  }
+  &-item {
+    border: 2px solid #dddddd;
+    border-radius: 1rem;
+    padding: 3rem;
+    display: flex;
+    height: auto;
+    &.slick-current.slick-active {
+      border-color: $secondary-color;
+    }
+  }
+  &-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  &-avatar {
+    @include size(5rem);
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+  &-name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $black-text;
+    margin-bottom: 0.5rem;
+  }
+  &-location {
+    font-size: 1.4rem;
+  }
+  &-vote {
+    margin-left: auto;
+    display: flex;
+  }
+  &-number {
+    color: $black-text;
+  }
+  &-icon {
+    margin-left: 1rem;
+    color: #fea250;
+  }
+  &-desc {
+    color: $black-text;
+    line-height: 30px;
+  }
+  .slick-track {
+    display: flex;
+    gap: 0 5rem;
+    margin-left: -3rem;
+    padding-bottom: 6rem;
+  }
+  .slick-dots {
+    display: flex;
+    align-items: center;
+    gap: 0 1.5rem;
+    transform: translateY(50%);
+    button {
+      border: none;
+      font-size: 0;
+      background-color: $gray-color;
+      @include size(15px);
+      border-radius: 100px;
+    }
+    .slick-active button {
+      background-color: $secondary-color;
+      width: 45px;
+      transition: all 0.2s linear;
+    }
+  }
+
+  .slick-arrow {
+    @include size(6rem);
+    border-radius: 100rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $secondary-color;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    z-index: 10;
+  }
+
+  .slick-prev {
+    background-color: transparent;
+    right: 8rem;
+  }
+  .slick-next {
+    right: 0;
+    background-color: $secondary-color;
+  }
+  @include maxWidth(767px) {
+    &-container {
+      margin-top: 3.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@include maxWidth(1023px) {
+  .customer {
+    .slick-track {
+      padding-bottom: 2rem;
+    }
+    .slick-dots {
+      justify-content: center;
+    }
+  }
+}

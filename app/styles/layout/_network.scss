@@ -1,0 +1,21 @@
+.network {
+  background-color: #f6f6f6;
+  &-global {
+    width: 90%;
+    margin: 15.8rem auto 3.6rem;
+    object-fit: cover;
+  }
+  &-banner {
+    width: 95%;
+    object-fit: cover;
+    margin-left: 1rem;
+  }
+  @include maxWidth(1023px) {
+    &-container {
+      padding-top: 2rem;
+    }
+    &-global {
+      margin: 3.5rem auto;
+    }
+  }
+}

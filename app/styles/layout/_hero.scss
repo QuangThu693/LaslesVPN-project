@@ -1,0 +1,74 @@
+.hero {
+  &-container {
+    margin-bottom: 10.5rem;
+    margin-top: 11.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 40px;
+    width: 100%;
+    min-height: 38.3rem;
+    position: relative;
+  }
+  &-content {
+    max-width: 55.5rem;
+    width: 100%;
+  }
+  &-heading {
+    font-weight: 500;
+    font-size: 5rem;
+    line-height: calc(70 / 50);
+    color: $black-text;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+  &-desc {
+    margin-top: 2rem;
+    line-height: calc(30 / 16);
+    margin-bottom: 5rem;
+    strong {
+      font-weight: 500;
+    }
+  }
+  &-button {
+    padding: 1.75rem 7.85rem 1.75rem 7.75rem;
+    border-radius: 1rem;
+  }
+
+  @include minWidth(1280px) {
+    &-image {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(40px, -50%);
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-container {
+      margin-top: 3rem;
+    }
+    &-heading {
+      font-size: 3.5rem;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-container {
+      flex-direction: column-reverse;
+      gap: 5rem 0;
+      margin-bottom: 6rem;
+    }
+    &-heading {
+      font-size: 2.5rem;
+    }
+    &-desc {
+      margin-bottom: 3rem;
+    }
+    &-button {
+      padding: 1rem 2.5rem;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.plan {
+  background-color: #f6f6f6;
+  padding-top: 8rem;
+  padding-bottom: 15rem;
+  max-height: unset;
+
+  &-top {
+    text-align: center;
+  }
+  &-heading {
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 3.5rem;
+    line-height: calc(50 / 35);
+    color: $black-text;
+    padding-bottom: 2rem;
+    max-width: 38.5rem;
+  }
+  &-desc {
+    margin: 0 auto;
+    max-width: 55.5rem;
+  }
+  &-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 5rem;
+    margin-top: 6rem;
+  }
+  &-item {
+    border: 2px solid #dddddd;
+    padding: 8rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    transition: all 0.25s linear;
+  }
+
+  &-item.is-active,
+  &-item:hover {
+    border-color: $secondary-color;
+    .button {
+      color: $primary-color;
+      background-color: $secondary-color;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        background-color: rgba(245, 56, 56, 0.35);
+        filter: blur(27px);
+        border-radius: inherit;
+        top: 0;
+        left: 50%;
+        width: 90%;
+        height: 100%;
+        transform: translate(-50%, 50%);
+      }
+    }
+  }
+
+  &-image img {
+    margin: 0 auto 3rem;
+    object-fit: cover;
+  }
+  &-title {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: calc(30 / 18);
+    color: $black-text;
+    margin-bottom: 3rem;
+  }
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 0 2.5rem;
+    margin-bottom: 1rem;
+  }
+  &-details {
+    margin-bottom: 2rem;
+  }
+  &-icon {
+    color: $thrid-color;
+    font-size: 2.4rem;
+  }
+  &-text {
+    font-size: 1.4rem;
+  }
+  &-price {
+    margin-top: auto;
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: calc(30 / 25);
+    color: $black-text;
+    margin-bottom: 2rem;
+  }
+  &-button {
+    padding: 1.3rem 6.2rem;
+    border: 2px solid;
+    border-radius: 5rem;
+    border-color: $secondary-color;
+  }
+
+  @include maxWidth(767px) {
+    &-heading {
+      font-size: 3rem;
+    }
+    &-item {
+      padding: 2rem 3rem;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    & {
+      padding-bottom: 6rem;
+      padding-top: 4rem;
+    }
+    &-main {
+      display: grid;
+      justify-content: flex-start;
+      grid-auto-columns: 30rem;
+      grid-auto-flow: column;
+      grid-gap: 0 3rem;
+      overflow: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 1rem;
+      grid-template-columns: unset;
+    }
+    &-main::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+    &-main > * {
+      scroll-snap-align: start;
+    }
+  }
+}
