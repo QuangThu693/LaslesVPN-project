@@ -1,9 +1,7 @@
 .feature {
   margin-bottom: 12.7rem;
   &-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexbox(center, space-between);
     gap: 0 17rem;
   }
   &-image {
@@ -27,8 +25,7 @@
   }
   &-item {
     margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
+    @include flexbox(center);
   }
   &-icon {
     color: $thrid-color;

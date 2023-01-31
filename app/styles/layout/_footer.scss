@@ -1,9 +1,7 @@
 .footer {
   padding-bottom: 2rem;
   &-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexbox(center, space-between);
   }
   &-logo {
     object-fit: cover;
@@ -31,9 +29,7 @@
     background-color: $primary-color;
     border-radius: 50%;
     font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox(center, center);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin-bottom: 3rem;
   }

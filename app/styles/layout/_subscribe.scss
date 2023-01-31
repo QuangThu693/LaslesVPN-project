@@ -3,10 +3,8 @@
   margin-bottom: 6.35rem;
   &-container {
     padding: 6rem 7rem;
-    background: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: $primary-color;
+    @include flexbox(center, space-between);
     box-shadow: 0 3rem 11.4rem 0 rgba(#0d1025, 0.06);
   }
   &-title {
@@ -49,7 +47,6 @@
     }
     &-title {
       font-size: 2.5rem;
-      //   margin-bottom: 1rem;
     }
   }
 }

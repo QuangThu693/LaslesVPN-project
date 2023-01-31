@@ -2,9 +2,8 @@
   &-container {
     margin-bottom: 10.5rem;
     margin-top: 11.6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    @include flexbox(center, space-between);
     gap: 0 40px;
     width: 100%;
     min-height: 38.3rem;
